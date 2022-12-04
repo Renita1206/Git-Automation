@@ -13,6 +13,7 @@ try:
     
     status = repo.git.status()
     print(status)
+    print()
 
     message = input("Enter commit message for repository: ")
     repo.index.commit(message)
@@ -20,6 +21,7 @@ try:
 
     status = repo.git.status()
     print(status)
+    print()
 
     origin = repo.remote(name='origin')
     origin.push()

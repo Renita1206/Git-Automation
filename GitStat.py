@@ -2,7 +2,7 @@ import os
 from git import Repo 
 
 path = input("Enter path of local repository: ")
-print(path)
+#print(path)
 repo = Repo(path)
 try:
     status = repo.git.status()
