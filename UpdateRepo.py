@@ -4,10 +4,8 @@ from git import Repo
 path = input("Enter path of local repository")
 print(path)
 repo = Repo(path)
-files = os.listdir(path)                                         
-print(files[1:])
 try:
-    repo.index.add(files[1:])
+    repo.git.add(all=True)
     message = input("Enter commit message for repository: ")
     repo.index.commit(message)
     print("Changes have been committed")
