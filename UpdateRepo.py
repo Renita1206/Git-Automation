@@ -1,7 +1,7 @@
 import os
 from git import Repo 
 
-path = input("Enter path of local repository")
+path = input("Enter path of local repository: ")
 print(path)
 repo = Repo(path)
 try:
