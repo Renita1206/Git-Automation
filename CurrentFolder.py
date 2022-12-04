@@ -12,7 +12,7 @@ try:
     repo.index.commit(message)
     print("Changes have been committed")
     origin = repo.remote(name='origin')
-    origin.push()
+    print(origin.push())
     print("Changes have been pushed")
 except:
     print("Oops...something went wrong")
