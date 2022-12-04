@@ -1,17 +1,19 @@
 import os
 from git import Repo 
 
-folders = os.listdir('C:\\Users\\Renita Kurian\\Documents\\Academic')
+pathOfFolder = input("Enter path of folder: ")
+folders = os.listdir(pathOfFolder)
 for i in folders:
-    pathOfGit = 'C:\\Users\\Renita Kurian\\Documents\\Academic\\' + i + '\\.git'
-    #print(i ,os.path.exists(pathOfGit))
+    pathOfGit = pathOfFolder + '\\' + i + '\\.git'
+    print(i ,os.path.exists(pathOfGit))
     if(os.path.exists(pathOfGit)):
-        path = 'C:\\Users\\Renita Kurian\\Documents\\Academic\\' + i
-        #print(path)
+        path = pathOfFolder + '\\' + i
+        print(path)
         repo = Repo(path)
-        files = os.listdir(path)
-        #print(files[1:])
-        repo.index.add(files[1:])
-        message = input("Enter commit message for" + i 
-        + "repository: ")
+        repo.git.add(all=True)
+        message = input("Enter commit message for " + i + " repository: ")
         repo.index.commit(message)
+        print("Changes have been committed")
+        origin = repo.remote(name='origin')
+        origin.push()
+        print("Changes have been pushed")
