@@ -2,7 +2,7 @@ import os
 from git import Repo 
 
 path = input("Enter path of local repository")
-print(r'(path)')
+print(path)
 repo = Repo(path)
 files = os.listdir(path)                                         
 print(files[1:])
