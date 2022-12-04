@@ -1,10 +1,10 @@
 import os
 from git import Repo 
 
-path = 'C:\\Users\\Renita Kurian\\Documents\\Academic\\DA'
+path = os.curdir
 print(path)
 repo = Repo(path)
-files = os.listdir(path)
+files = os.listdir(path)                                         
 print(files[1:])
 try:
     repo.index.add(files[1:])
